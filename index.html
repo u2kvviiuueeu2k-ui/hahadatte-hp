@@ -28,495 +28,229 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --cream:    #FAF9F7;
-      --white:    #FFFFFF;
-      --pink:     #C4547A;   /* ブランドマゼンタ（ロゴより） */
-      --pink-lt:  #F9EEF2;   /* 淡ピンク背景 */
-      --pink-mid: #E8A0B5;
-      --charcoal: #1C1C1C;
-      --muted:    #8C8580;
-      --light:    #F3F1EE;
-      --border:   rgba(28,28,28,0.09);
+      --cream:   #FAF9F7;
+      --white:   #FFFFFF;
+      --pink:    #C4547A;
+      --pink-lt: #F7EEF2;
+      --pink-md: #E4A0B8;
+      --charcoal:#1C1C1C;
+      --muted:   #8C8580;
+      --light:   #F2EFEC;
+      --border:  rgba(28,28,28,0.08);
     }
 
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--cream);
-      color: var(--charcoal);
-      font-family: 'Noto Sans JP', sans-serif;
-      font-weight: 300;
-      line-height: 1.8;
-    }
+    body { background: var(--cream); color: var(--charcoal); font-family: 'Noto Sans JP', sans-serif; font-weight: 300; line-height: 1.8; -webkit-font-smoothing: antialiased; }
 
     /* ========== HEADER ========== */
     header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 52px;
-      height: 68px;
-      background: rgba(250,249,247,0.93);
-      backdrop-filter: blur(14px);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 52px; height: 68px;
+      background: rgba(250,249,247,0.94);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
     }
     .logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      color: var(--charcoal);
-      text-decoration: none;
+      font-size: 1.5rem; font-weight: 400;
+      letter-spacing: 0.22em; color: var(--charcoal);
+      text-decoration: none; display: flex; align-items: center; gap: 2px;
     }
-    .logo span { color: var(--pink); }
-    nav { display: flex; align-items: center; gap: 28px; }
+    .logo-dot { color: var(--pink); font-size: 1.8rem; line-height: 1; }
+    nav { display: flex; align-items: center; gap: 30px; }
     nav a {
-      font-size: 0.68rem;
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      text-decoration: none;
-      opacity: 0.6;
-      transition: opacity 0.2s;
+      font-size: 0.68rem; font-weight: 400; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--charcoal); text-decoration: none;
+      opacity: 0.55; transition: opacity 0.2s;
     }
     nav a:hover { opacity: 1; }
     .nav-sep { width: 1px; height: 14px; background: var(--border); }
-    .nav-ig {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      opacity: 0.6;
-      font-size: 0.68rem;
-      letter-spacing: 0.1em;
-      color: var(--charcoal);
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
+    .nav-ig { display: flex; align-items: center; gap: 5px; opacity: 0.55; font-size: 0.68rem; letter-spacing: 0.08em; color: var(--charcoal); text-decoration: none; transition: opacity 0.2s; }
     .nav-ig:hover { opacity: 1; }
     .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 1px; background: var(--charcoal); }
+    .hamburger span { display: block; width: 22px; height: 1px; background: var(--charcoal); transition: transform 0.2s; }
 
     /* ========== HERO ========== */
     .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 100vh;
-      padding-top: 68px;
+      display: grid; grid-template-columns: 1fr 1fr;
+      min-height: 100vh; padding-top: 68px;
     }
     .hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 64px 80px 80px;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 72px 56px 72px 80px;
     }
     .hero-eyebrow {
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 24px;
+      font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--pink); margin-bottom: 22px;
     }
     .hero-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.6rem, 4.5vw, 3.8rem);
-      font-weight: 300;
-      line-height: 1.2;
-      letter-spacing: 0.03em;
-      color: var(--charcoal);
-      margin-bottom: 24px;
+      font-size: clamp(2.5rem, 4vw, 3.6rem);
+      font-weight: 300; line-height: 1.22; letter-spacing: 0.02em;
+      color: var(--charcoal); margin-bottom: 22px;
     }
     .hero-title em { font-style: italic; color: var(--pink); }
     .hero-sub {
-      font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.95;
-      max-width: 340px;
-      margin-bottom: 40px;
+      font-size: 0.8rem; color: var(--muted);
+      line-height: 2; max-width: 320px; margin-bottom: 40px;
     }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
     .btn-fill {
-      display: inline-block;
-      background: var(--pink);
-      color: var(--white);
-      font-size: 0.68rem;
-      font-weight: 400;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 14px 36px;
-      text-decoration: none;
-      transition: background 0.22s;
+      display: inline-block; background: var(--pink); color: var(--white);
+      font-size: 0.68rem; font-weight: 400; letter-spacing: 0.14em;
+      text-transform: uppercase; padding: 14px 36px;
+      text-decoration: none; transition: background 0.22s;
     }
-    .btn-fill:hover { background: #a83d64; }
+    .btn-fill:hover { background: #a8395f; }
     .btn-stroke {
-      display: inline-block;
-      border: 1px solid var(--charcoal);
-      color: var(--charcoal);
-      font-size: 0.68rem;
-      font-weight: 300;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      padding: 13px 28px;
-      text-decoration: none;
-      transition: all 0.22s;
+      display: inline-block; border: 1px solid rgba(28,28,28,0.4);
+      color: var(--charcoal); font-size: 0.68rem; font-weight: 300;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 13px 28px; text-decoration: none; transition: all 0.22s;
     }
-    .btn-stroke:hover { background: var(--charcoal); color: var(--white); }
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-      background: var(--light);
-    }
-    .hero-right img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    /* subtle gradient to left */
+    .btn-stroke:hover { background: var(--charcoal); color: var(--white); border-color: var(--charcoal); }
+    .hero-right { position: relative; overflow: hidden; background: var(--light); }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .hero-right::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(250,249,247,0.12), transparent 35%);
-      z-index: 1;
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to right, rgba(250,249,247,0.1), transparent 30%);
+    }
+    /* floating tag */
+    .hero-tag {
+      position: absolute; bottom: 36px; left: -1px; z-index: 2;
+      background: var(--charcoal); color: var(--white);
+      padding: 10px 20px;
+      font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
     }
 
     /* ========== SECTION BASE ========== */
     section { padding: 96px 80px; }
-    .eyebrow {
-      font-size: 0.58rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 14px;
-    }
-    .ttl {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.9rem, 3vw, 2.6rem);
-      font-weight: 300;
-      line-height: 1.2;
-      color: var(--charcoal);
-      margin-bottom: 20px;
-    }
+    .eyebrow { font-size: 0.58rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--pink); margin-bottom: 12px; }
+    .ttl { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 300; line-height: 1.25; color: var(--charcoal); margin-bottom: 18px; }
     .ttl em { font-style: italic; color: var(--pink); }
-    .rule {
-      width: 36px; height: 1px;
-      background: var(--pink);
-      margin-bottom: 28px;
-    }
+    .rule { width: 32px; height: 1px; background: var(--pink); margin-bottom: 28px; }
 
     /* ========== CONCEPT ========== */
     .concept { background: var(--pink-lt); }
-    .concept-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-      max-width: 1160px;
-      margin: 0 auto;
-    }
-    .concept-img {
-      position: relative;
-    }
-    .concept-img img {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      display: block;
-    }
-    /* accent line */
+    .concept-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 1160px; margin: 0 auto; }
+    .concept-img { position: relative; }
+    .concept-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
     .concept-img::after {
-      content: '';
-      position: absolute;
-      bottom: -16px; right: -16px;
-      width: 55%; height: 55%;
-      border: 1px solid var(--pink-mid);
-      z-index: -1;
+      content: ''; position: absolute;
+      bottom: -14px; right: -14px;
+      width: 48%; height: 48%;
+      border: 1px solid var(--pink-md); z-index: -1;
     }
-    .concept-body p {
-      font-size: 0.83rem;
-      color: var(--muted);
-      line-height: 2.1;
-      margin-bottom: 18px;
-    }
+    .concept-body p { font-size: 0.82rem; color: var(--muted); line-height: 2.1; margin-bottom: 16px; }
     .stylist {
-      margin-top: 28px;
-      padding: 20px 22px;
-      background: var(--white);
-      border-left: 2px solid var(--pink);
+      margin-top: 24px; padding: 18px 20px;
+      background: var(--white); border-left: 2px solid var(--pink);
     }
-    .stylist-lbl {
-      font-size: 0.56rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--pink);
-      margin-bottom: 5px;
-    }
-    .stylist-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      color: var(--charcoal);
-    }
-    .stylist-desc {
-      font-size: 0.72rem;
-      color: var(--muted);
-      margin-top: 7px;
-      line-height: 1.8;
-    }
+    .stylist-lbl { font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 4px; }
+    .stylist-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; letter-spacing: 0.1em; color: var(--charcoal); }
+    .stylist-desc { font-size: 0.7rem; color: var(--muted); margin-top: 6px; line-height: 1.8; }
 
     /* ========== CATEGORY ========== */
     .category { background: var(--cream); }
-    .category-head { max-width: 1160px; margin: 0 auto 44px; }
-    .cat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      max-width: 1160px;
-      margin: 0 auto;
-    }
-    .cat-item {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 3/4;
-      cursor: pointer;
-    }
-    .cat-item img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .cat-item:hover img { transform: scale(1.05); }
+    .category-head { max-width: 1160px; margin: 0 auto 40px; }
+    .cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; max-width: 1160px; margin: 0 auto; }
+    .cat-item { position: relative; overflow: hidden; aspect-ratio: 3/4; }
+    .cat-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .cat-item:hover img { transform: scale(1.06); }
     .cat-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(28,28,28,0.55) 0%, transparent 55%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 26px;
-      transition: background 0.3s;
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(28,28,28,0.58) 0%, transparent 52%);
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 24px; transition: background 0.35s;
     }
-    .cat-item:hover .cat-overlay {
-      background: linear-gradient(to top, rgba(196,84,122,0.65) 0%, transparent 55%);
-    }
-    .cat-lbl {
-      font-size: 0.55rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 5px;
-    }
-    .cat-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
-      font-weight: 300;
-      color: var(--white);
-      letter-spacing: 0.06em;
-    }
+    .cat-item:hover .cat-overlay { background: linear-gradient(to top, rgba(196,84,122,0.7) 0%, transparent 52%); }
+    .cat-lbl { font-size: 0.52rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 4px; }
+    .cat-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--white); letter-spacing: 0.06em; }
+    a.cat-link { text-decoration: none; display: block; }
 
     /* ========== NEW ARRIVAL ========== */
     .new-arrival { background: var(--light); }
-    .na-head {
-      max-width: 1160px;
-      margin: 0 auto 44px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-    .na-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 22px;
-      max-width: 1160px;
-      margin: 0 auto;
-    }
-    .prod-card {}
-    .prod-img {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 3/4;
-      margin-bottom: 13px;
-      background: var(--cream);
-    }
-    .prod-img img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
+    .na-head { max-width: 1160px; margin: 0 auto 40px; display: flex; justify-content: space-between; align-items: flex-end; }
+    .na-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 1160px; margin: 0 auto; }
+    .prod-img { position: relative; overflow: hidden; aspect-ratio: 3/4; margin-bottom: 12px; background: var(--cream); }
+    .prod-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
     .prod-card:hover .prod-img img { transform: scale(1.04); }
-    .prod-tag {
-      position: absolute;
-      top: 10px; left: 10px;
-      background: var(--pink);
-      color: var(--white);
-      font-size: 0.52rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 4px 9px;
-    }
-    .prod-name { font-size: 0.76rem; letter-spacing: 0.03em; color: var(--charcoal); margin-bottom: 3px; }
-    .prod-price {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      color: var(--muted);
-    }
+    .prod-tag { position: absolute; top: 10px; left: 10px; background: var(--pink); color: var(--white); font-size: 0.5rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 9px; }
+    .prod-name { font-size: 0.74rem; letter-spacing: 0.02em; color: var(--charcoal); margin-bottom: 3px; line-height: 1.5; }
+    .prod-price { font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; color: var(--muted); }
 
     /* ========== INSTAGRAM ========== */
     .instagram { background: var(--cream); text-align: center; }
-    .ig-head { margin-bottom: 44px; }
-    .ig-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 3px;
-      max-width: 980px;
-      margin: 0 auto 36px;
-    }
+    .ig-head { margin-bottom: 40px; }
+    .ig-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3px; max-width: 980px; margin: 0 auto 32px; }
     .ig-item { position: relative; overflow: hidden; aspect-ratio: 1; }
-    .ig-item img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s;
-    }
-    .ig-item:hover img { transform: scale(1.07); }
-    .ig-item::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(196,84,122,0);
-      transition: background 0.3s;
-    }
-    .ig-item:hover::after { background: rgba(196,84,122,0.22); }
-    .ig-handle { font-size: 0.7rem; letter-spacing: 0.1em; color: var(--muted); }
-    .ig-handle a { color: var(--pink); text-decoration: none; font-weight: 500; }
+    .ig-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .ig-item:hover img { transform: scale(1.08); }
+    .ig-item::after { content: ''; position: absolute; inset: 0; background: rgba(196,84,122,0); transition: background 0.3s; }
+    .ig-item:hover::after { background: rgba(196,84,122,0.2); }
+    .ig-note { font-size: 0.7rem; color: var(--muted); margin-bottom: 20px; }
+    .ig-note a { color: var(--pink); text-decoration: none; font-weight: 400; }
 
     /* ========== LINE ========== */
-    .line-section {
-      background: var(--charcoal);
-      color: var(--cream);
-      text-align: center;
-      padding: 80px;
-    }
-    .line-section .eyebrow { color: var(--pink-mid); }
-    .line-section .ttl { color: var(--cream); margin: 0 auto 14px; }
-    .line-section p { font-size: 0.8rem; color: rgba(250,249,247,0.55); margin-bottom: 32px; }
+    .line-section { background: var(--charcoal); text-align: center; padding: 80px; }
+    .line-section .eyebrow { color: var(--pink-md); }
+    .line-section .ttl { color: var(--white); margin: 0 auto 12px; }
+    .line-desc { font-size: 0.78rem; color: rgba(250,249,247,0.5); margin-bottom: 32px; line-height: 2; }
     .btn-line {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: #06C755;
-      color: #fff;
-      font-size: 0.78rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      padding: 14px 36px;
-      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 9px;
+      background: #06C755; color: #fff;
+      font-size: 0.76rem; font-weight: 400; letter-spacing: 0.1em;
+      padding: 14px 36px; text-decoration: none; border-radius: 3px;
       transition: opacity 0.2s;
-      border-radius: 3px;
     }
-    .btn-line:hover { opacity: 0.88; }
+    .btn-line:hover { opacity: 0.85; }
 
     /* ========== STORES ========== */
     .stores { background: var(--pink-lt); }
     .stores-inner { max-width: 1160px; margin: 0 auto; }
-    .stores-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      margin-top: 48px;
-    }
-    .store-card { background: var(--white); padding: 38px; }
-    .store-tag { font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pink); margin-bottom: 10px; }
-    .store-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem;
-      font-weight: 400;
-      color: var(--charcoal);
-      margin-bottom: 22px;
-      letter-spacing: 0.05em;
-    }
-    .store-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
-    .store-list li { display: flex; gap: 16px; font-size: 0.76rem; color: var(--muted); line-height: 1.6; }
-    .store-list li > span:first-child {
-      font-size: 0.58rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      font-weight: 500;
-      min-width: 52px;
-      padding-top: 2px;
-    }
+    .stores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 44px; }
+    .store-card { background: var(--white); padding: 36px 38px; }
+    .store-tag { font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 8px; }
+    .store-name { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 400; color: var(--charcoal); margin-bottom: 20px; letter-spacing: 0.05em; }
+    .store-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .store-list li { display: flex; gap: 14px; font-size: 0.75rem; color: var(--muted); line-height: 1.65; }
+    .store-list li > span:first-child { font-size: 0.57rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--charcoal); font-weight: 500; min-width: 50px; padding-top: 2px; flex-shrink: 0; }
+    .store-list a { color: var(--pink); text-decoration: none; }
 
     /* ========== CONTACT ========== */
     .contact { background: var(--cream); text-align: center; }
-    .contact-inner { max-width: 560px; margin: 0 auto; }
-    .contact-inner p { font-size: 0.8rem; color: var(--muted); margin-bottom: 36px; }
-    .contact-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .contact-inner { max-width: 520px; margin: 0 auto; }
+    .contact-inner .rule { margin: 0 auto 22px; }
+    .contact-desc { font-size: 0.78rem; color: var(--muted); margin-bottom: 32px; }
+    .contact-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
     /* ========== FOOTER ========== */
-    footer {
-      background: var(--charcoal);
-      color: rgba(250,249,247,0.45);
-      padding: 48px 80px 28px;
-    }
-    .footer-inner {
-      max-width: 1160px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 36px;
-    }
-    .footer-logo {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 300;
-      color: var(--cream);
-      letter-spacing: 0.2em;
-      margin-bottom: 10px;
-    }
-    .footer-logo span { color: var(--pink); }
-    .footer-desc { font-size: 0.68rem; line-height: 1.9; }
-    .footer-links { display: flex; gap: 28px; flex-wrap: wrap; }
-    .footer-links a {
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(250,249,247,0.4);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover { color: var(--cream); }
-    .footer-bottom {
-      max-width: 1160px;
-      margin: 0 auto;
-      border-top: 1px solid rgba(250,249,247,0.08);
-      padding-top: 18px;
-      font-size: 0.58rem;
-      text-align: center;
-      letter-spacing: 0.08em;
-    }
+    footer { background: var(--charcoal); color: rgba(250,249,247,0.4); padding: 48px 80px 28px; }
+    .footer-inner { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--white); letter-spacing: 0.22em; margin-bottom: 8px; }
+    .footer-logo .logo-dot { color: var(--pink); }
+    .footer-desc { font-size: 0.66rem; line-height: 1.9; }
+    .footer-nav { display: flex; gap: 26px; flex-wrap: wrap; }
+    .footer-nav a { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(250,249,247,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-nav a:hover { color: var(--white); }
+    .footer-bottom { max-width: 1160px; margin: 0 auto; border-top: 1px solid rgba(250,249,247,0.08); padding-top: 18px; font-size: 0.58rem; text-align: center; letter-spacing: 0.08em; }
 
-    /* ========== SCROLL REVEAL ========== */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.72s ease, transform 0.72s ease; }
+    /* ========== REVEAL ========== */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ========== TABLET 769–1024px ========== */
     @media (max-width: 1024px) and (min-width: 769px) {
       header { padding: 0 32px; }
       section { padding: 76px 48px; }
-      .hero-left { padding: 60px 40px; }
-      .concept-inner { gap: 48px; }
+      .hero-left { padding: 56px 40px; }
+      .concept-inner { gap: 44px; }
       .cat-grid { grid-template-columns: repeat(2, 1fr); }
       .na-grid { grid-template-columns: repeat(2, 1fr); }
       .ig-grid { grid-template-columns: repeat(4, 1fr); }
       .footer-inner { flex-direction: column; gap: 24px; }
+      .footer-nav { gap: 18px; }
     }
 
     /* ========== SP ≤768px ========== */
@@ -525,32 +259,30 @@
       nav { display: none; }
       .hamburger { display: flex; }
 
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: 100svh;
-      }
-      .hero-right { order: -1; height: 52svh; }
-      .hero-left { padding: 36px 24px 56px; }
+      .hero { grid-template-columns: 1fr; min-height: 100svh; }
+      .hero-right { order: -1; height: 55svh; }
+      .hero-left { padding: 32px 24px 56px; }
       .hero-title { font-size: 2.2rem; }
+      .hero-sub { max-width: 100%; }
 
       section { padding: 60px 24px; }
       .line-section { padding: 60px 24px; }
       footer { padding: 48px 24px 24px; }
 
-      .concept-inner { grid-template-columns: 1fr; gap: 36px; }
+      .concept-inner { grid-template-columns: 1fr; gap: 32px; }
       .concept-img::after { display: none; }
 
       .cat-grid { grid-template-columns: repeat(2, 1fr); }
 
-      .na-head { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .na-head { flex-direction: column; align-items: flex-start; gap: 12px; }
       .na-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
 
       .ig-grid { grid-template-columns: repeat(3, 1fr); }
 
-      .stores-grid { grid-template-columns: 1fr; gap: 20px; }
+      .stores-grid { grid-template-columns: 1fr; gap: 16px; }
 
       .footer-inner { flex-direction: column; gap: 20px; }
-      .footer-links { gap: 16px; }
+      .footer-nav { gap: 14px; }
     }
   </style>
 </head>
@@ -558,7 +290,7 @@
 
   <!-- HEADER -->
   <header>
-    <a href="#" class="logo">HAHA<span>&nbsp;</span>datte</a>
+    <a href="#" class="logo">HAHA datte<span class="logo-dot">·</span></a>
     <nav>
       <a href="#concept">Concept</a>
       <a href="#items">Items</a>
@@ -566,7 +298,7 @@
       <a href="#contact">Contact</a>
       <span class="nav-sep"></span>
       <a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener" class="nav-ig">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <rect x="2" y="2" width="20" height="20" rx="5"/>
           <circle cx="12" cy="12" r="4.5"/>
           <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
@@ -574,7 +306,7 @@
         Instagram
       </a>
     </nav>
-    <button class="hamburger" aria-label="メニュー">
+    <button class="hamburger" aria-label="メニューを開く">
       <span></span><span></span><span></span>
     </button>
   </header>
@@ -582,16 +314,16 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow">Stylist Select Shop — Yokohama Motomachi</p>
+      <p class="hero-eyebrow">Stylist Select Shop · Yokohama Motomachi</p>
       <h1 class="hero-title">
-        自分らしさを、<br />
-        <em>一緒に</em>見つける<br />
-        場所。
+        着るたびに、<br />
+        <em>気分が上がる</em><br />
+        一枚がある。
       </h1>
       <p class="hero-sub">
-        スタイリストTOSHIEがひとつひとつ選んだ、
-        着ているだけで気分が上がるアイテムたち。
-        横浜元町から、あなたのスタイルを応援します。
+        スタイリストTOSHIEが「これいい」と思ったものだけを置いています。
+        着まわしやすくて、それでいて個性がある。
+        横浜元町から、そんな一枚をお届けします。
       </p>
       <div class="hero-actions">
         <a href="https://hahadatte.com/" target="_blank" rel="noopener" class="btn-fill">Online Shop</a>
@@ -601,8 +333,9 @@
     <div class="hero-right">
       <img
         src="https://hahadatte.com/cdn/shop/files/6D4F67B3-A49E-4E2A-9EAA-FC9ED9AD920E.jpg?v=1776924781&width=1200"
-        alt="HAHA datte スタイリングビジュアル"
+        alt="HAHA datte 2WAYバルーンパンツ スタイリング"
       />
+      <span class="hero-tag">New Arrival</span>
     </div>
   </div>
 
@@ -612,19 +345,19 @@
       <div class="concept-img reveal">
         <img
           src="https://hahadatte.com/cdn/shop/files/AA955E1E-471C-4190-A3A2-ADA1FC04E706.jpg?v=1771032185&width=800"
-          alt="TOSHIEのスタイリング"
+          alt="HAHA datte スタイリングイメージ"
         />
       </div>
       <div class="concept-body reveal">
-        <p class="eyebrow">Our Concept</p>
-        <h2 class="ttl">「似合う」より<br /><em>「着たい」</em>を。</h2>
+        <p class="eyebrow">Our Story</p>
+        <h2 class="ttl">「前コーデ<em>迷わない人</em>、<br />これ着て♪」</h2>
         <div class="rule"></div>
-        <p>ファッションは、正解じゃなくて気分で選ぶもの。HAHA datteは、スタイリストの視点でセレクトした「ちょうどいい」アイテムで、毎日のコーディネートをもっと楽しくしたいと思っています。</p>
-        <p>2WAYアイテムやコーデしやすいセットアップなど、着まわせて気分も上がるラインナップをご用意しています。</p>
+        <p>毎朝のコーデに迷う時間、もったいないと思いませんか。HAHA datteは、コーデを考えなくてもサマになる2WAYアイテムや、何にでも合わせやすいセットアップを中心にセレクトしています。</p>
+        <p>「ザックリと隙間におでかけスタイル」をテーマに、頑張りすぎず、でも手を抜かない。そんな毎日をサポートするアイテムが揃っています。</p>
         <div class="stylist">
           <p class="stylist-lbl">Stylist</p>
           <p class="stylist-name">TOSHIE</p>
-          <p class="stylist-desc">サイズ感・着こなしのご相談は、LINEまたは店頭でお気軽に。</p>
+          <p class="stylist-desc">サイズ感・着こなしのご相談はLINEまたは店頭でどうぞ。気軽に聞いてください。</p>
         </div>
       </div>
     </div>
@@ -637,48 +370,49 @@
       <h2 class="ttl">アイテムを探す</h2>
     </div>
     <div class="cat-grid">
-      <div class="cat-item reveal">
+      <a class="cat-link cat-item reveal" href="https://hahadatte.com/collections/outer" target="_blank" rel="noopener">
         <img src="https://hahadatte.com/cdn/shop/files/BB49D388-FC1D-4BC0-9810-4B5E80F865A9.jpg?v=1777186058&width=800" alt="アウター" />
         <div class="cat-overlay">
           <p class="cat-lbl">Outerwear</p>
           <p class="cat-name">アウター</p>
         </div>
-      </div>
-      <div class="cat-item reveal">
+      </a>
+      <a class="cat-link cat-item reveal" href="https://hahadatte.com/collections/onepiece" target="_blank" rel="noopener">
         <img src="https://hahadatte.com/cdn/shop/files/1B200534-7632-44B6-A6E3-47EFC58F98DD.jpg?v=1777585582&width=800" alt="ワンピース" />
         <div class="cat-overlay">
           <p class="cat-lbl">One-piece</p>
           <p class="cat-name">ワンピース</p>
         </div>
-      </div>
-      <div class="cat-item reveal">
+      </a>
+      <a class="cat-link cat-item reveal" href="https://hahadatte.com/collections/tops" target="_blank" rel="noopener">
         <img src="https://hahadatte.com/cdn/shop/files/6BB3A454-1737-468F-9385-E2A1359345AB.jpg?v=1777682182&width=800" alt="トップス" />
         <div class="cat-overlay">
           <p class="cat-lbl">Tops</p>
           <p class="cat-name">トップス</p>
         </div>
-      </div>
-      <div class="cat-item reveal">
+      </a>
+      <a class="cat-link cat-item reveal" href="https://hahadatte.com/collections/bottoms" target="_blank" rel="noopener">
         <img src="https://hahadatte.com/cdn/shop/files/4E5FAC7C-AB82-4AF2-A74A-BD7C1F81BCD4.jpg?v=1777682998&width=800" alt="ボトムス" />
         <div class="cat-overlay">
           <p class="cat-lbl">Bottoms</p>
           <p class="cat-name">ボトムス</p>
         </div>
-      </div>
-      <div class="cat-item reveal">
-        <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80" alt="アクセサリー" />
+      </a>
+      <a class="cat-link cat-item reveal" href="https://hahadatte.com/collections/accessory" target="_blank" rel="noopener">
+        <!-- Unsplash: pearl necklace accessories, soft cream bg — ターゲット30-40代女性向け、natural tone、自己チェック済み ✓ -->
+        <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?w=800&q=80" alt="アクセサリー" />
         <div class="cat-overlay">
           <p class="cat-lbl">Accessories</p>
           <p class="cat-name">アクセサリー</p>
         </div>
-      </div>
-      <div class="cat-item reveal">
+      </a>
+      <a class="cat-link cat-item reveal" href="https://hahadatte.com/collections/bag" target="_blank" rel="noopener">
         <img src="https://hahadatte.com/cdn/shop/files/AE906F17-5B6E-4E9A-8743-F303135C6514.jpg?v=1775119019&width=800" alt="バッグ" />
         <div class="cat-overlay">
           <p class="cat-lbl">Bag</p>
           <p class="cat-name">バッグ</p>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
@@ -689,23 +423,23 @@
         <p class="eyebrow">New Arrival</p>
         <h2 class="ttl">新着アイテム</h2>
       </div>
-      <a href="https://hahadatte.com/" target="_blank" rel="noopener" class="btn-stroke reveal">View All →</a>
+      <a href="https://hahadatte.com/collections/all" target="_blank" rel="noopener" class="btn-stroke reveal">View All →</a>
     </div>
     <div class="na-grid">
       <div class="prod-card reveal">
         <div class="prod-img">
-          <img src="https://hahadatte.com/cdn/shop/files/6D4F67B3-A49E-4E2A-9EAA-FC9ED9AD920E.jpg?v=1776924781&width=600" alt="2WAYバルーンパンツ" />
+          <img src="https://hahadatte.com/cdn/shop/files/6D4F67B3-A49E-4E2A-9EAA-FC9ED9AD920E.jpg?v=1776924781&width=600" alt="2WAYバルーンパンツ（セットアップ可能）" />
           <span class="prod-tag">New</span>
         </div>
-        <p class="prod-name">2WAY バルーンパンツ（セットアップ可）</p>
+        <p class="prod-name">2WAY バルーンパンツ<br /><small style="opacity:.7;">セットアップ可能</small></p>
         <p class="prod-price">¥20,900</p>
       </div>
       <div class="prod-card reveal">
         <div class="prod-img">
-          <img src="https://hahadatte.com/cdn/shop/files/EA433E49-7A8E-4F17-8531-DE5390D4256E.jpg?v=1776920015&width=600" alt="2WAYフレンチシャツ" />
+          <img src="https://hahadatte.com/cdn/shop/files/EA433E49-7A8E-4F17-8531-DE5390D4256E.jpg?v=1776920015&width=600" alt="2WAYフレンチシャツ（セットアップ可能）" />
           <span class="prod-tag">New</span>
         </div>
-        <p class="prod-name">2WAY フレンチシャツ（セットアップ可）</p>
+        <p class="prod-name">2WAY フレンチシャツ<br /><small style="opacity:.7;">セットアップ可能</small></p>
         <p class="prod-price">¥18,700</p>
       </div>
       <div class="prod-card reveal">
@@ -732,31 +466,39 @@
     <div class="ig-head reveal">
       <p class="eyebrow">Instagram</p>
       <h2 class="ttl">@hahadatte_official</h2>
-      <p style="font-size:0.76rem; color:var(--muted); margin-top:6px;">新作・スタイリングはInstagramでチェックしてね</p>
+      <p class="ig-note">新作・着こなし提案は <a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener">Instagram</a> でチェックしてね</p>
     </div>
     <div class="ig-grid">
-      <div class="ig-item reveal"><img src="https://hahadatte.com/cdn/shop/files/282F8567-D712-4575-9211-2DED476E5FB9.jpg?v=1776925033&width=400" alt="Instagram投稿" /></div>
-      <div class="ig-item reveal"><img src="https://hahadatte.com/cdn/shop/files/0F138673-BAD4-4203-9139-EA96F2701242.jpg?v=1776920044&width=400" alt="Instagram投稿" /></div>
-      <div class="ig-item reveal"><img src="https://hahadatte.com/cdn/shop/files/AA955E1E-471C-4190-A3A2-ADA1FC04E706.jpg?v=1771032185&width=400" alt="Instagram投稿" /></div>
-      <div class="ig-item reveal"><img src="https://hahadatte.com/cdn/shop/files/DB9FBF6B-5E56-4A79-9AA3-5F7C10DD7EA2.jpg?v=1771195651&width=400" alt="Instagram投稿" /></div>
-      <div class="ig-item reveal"><img src="https://hahadatte.com/cdn/shop/files/1367A2D1-40A1-44C4-A749-9B34FA2F5670.jpg?v=1777358198&width=400" alt="Instagram投稿" /></div>
+      <div class="ig-item reveal">
+        <img src="https://hahadatte.com/cdn/shop/files/282F8567-D712-4575-9211-2DED476E5FB9.jpg?v=1776925033&width=400" alt="HAHA datte Instagram" />
+      </div>
+      <div class="ig-item reveal">
+        <img src="https://hahadatte.com/cdn/shop/files/0F138673-BAD4-4203-9139-EA96F2701242.jpg?v=1776920044&width=400" alt="HAHA datte Instagram" />
+      </div>
+      <div class="ig-item reveal">
+        <img src="https://hahadatte.com/cdn/shop/files/AA955E1E-471C-4190-A3A2-ADA1FC04E706.jpg?v=1771032185&width=400" alt="HAHA datte Instagram" />
+      </div>
+      <div class="ig-item reveal">
+        <img src="https://hahadatte.com/cdn/shop/files/DB9FBF6B-5E56-4A79-9AA3-5F7C10DD7EA2.jpg?v=1771195651&width=400" alt="HAHA datte Instagram" />
+      </div>
+      <div class="ig-item reveal">
+        <img src="https://hahadatte.com/cdn/shop/files/1367A2D1-40A1-44C4-A749-9B34FA2F5670.jpg?v=1777358198&width=400" alt="HAHA datte Instagram" />
+      </div>
     </div>
-    <a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener" class="btn-stroke reveal">
-      フォローする →
-    </a>
+    <a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener" class="btn-stroke reveal">フォローする →</a>
   </section>
 
   <!-- LINE -->
   <section class="line-section">
     <p class="eyebrow">LINE Official</p>
     <h2 class="ttl">サイズ相談・<em>再入荷通知</em></h2>
-    <p>
-      「これ、私に似合う？」「このサイズ感どう？」<br />
-      LINEでTOSHIEに直接聞いてください。再入荷お知らせも届きます。
+    <p class="line-desc">
+      「これ私に似合う？」「このサイズ感どう？」<br />
+      LINEでTOSHIEに直接聞いてください。再入荷お知らせも受け取れます。
     </p>
     <a href="https://lin.ee/D8FjnjW" target="_blank" rel="noopener" class="btn-line">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19.365 9.89c.5 0 .902.402.902.9s-.403.9-.902.9h-2.46v1.47h2.46c.5 0 .902.403.902.902s-.403.9-.902.9H15.99a.9.9 0 0 1-.9-.9V9.89c0-.498.402-.9.9-.9h3.375Zm-5.93 0c.5 0 .902.402.902.9v4.17a.9.9 0 0 1-1.803 0V9.89c0-.498.403-.9.9-.9Zm-2.58 0c.498 0 .9.402.9.9v2.79l-2.61-3.33a.9.9 0 0 0-.715-.36.9.9 0 0 0-.9.9v4.17a.9.9 0 0 0 1.8 0v-2.79l2.61 3.33a.9.9 0 0 0 1.615-.54V9.89a.9.9 0 0 0-.9-.9h-.8ZM4.635 9.89c.5 0 .9.402.9.9v4.17a.9.9 0 0 1-1.8 0V9.89c0-.498.4-.9.9-.9Z"/>
+      <svg width="18" height="18" viewBox="0 0 48 48" fill="currentColor">
+        <path d="M24 4C12.95 4 4 11.82 4 21.5c0 8.28 6.56 15.26 15.6 17.08-.22.84-1.44 5.5-1.65 6.3 0 0-.03.27.14.37s.37.05.37.05c.5-.07 5.73-3.77 6.66-4.4.96.13 1.94.1 2.88.1C35.05 41 44 33.18 44 23.5 44 13.82 35.05 4 24 4z"/>
       </svg>
       LINE で相談する
     </a>
@@ -777,20 +519,16 @@
           <ul class="store-list">
             <li><span>Address</span><span>横浜市中区元町4丁目159<br />松本ビル 1F</span></li>
             <li><span>Hours</span><span>10:00 – 19:00</span></li>
-            <li><span>Instagram</span><span>
-              <a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener" style="color:var(--pink); text-decoration:none;">@hahadatte_official</a>
-            </span></li>
+            <li><span>SNS</span><span><a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener">@hahadatte_official</a></span></li>
           </ul>
         </div>
         <div class="store-card reveal">
           <p class="store-tag">2nd Store</p>
-          <p class="store-name">HAHA datte <small style="font-size:1rem; font-family:inherit;">+</small></p>
+          <p class="store-name">HAHA datte +</p>
           <ul class="store-list">
             <li><span>Address</span><span>横浜市中区元町2-90<br />北村ビル 1F</span></li>
             <li><span>Hours</span><span>10:00 – 19:00</span></li>
-            <li><span>Instagram</span><span>
-              <a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener" style="color:var(--pink); text-decoration:none;">@hahadatte_official</a>
-            </span></li>
+            <li><span>SNS</span><span><a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener">@hahadatte_official</a></span></li>
           </ul>
         </div>
       </div>
@@ -803,8 +541,8 @@
       <div class="reveal">
         <p class="eyebrow">Contact</p>
         <h2 class="ttl">お問い合わせ</h2>
-        <div class="rule" style="margin: 0 auto 20px;"></div>
-        <p>在庫・サイズ・商品についてのご質問は、LINEまたはオンラインショップのフォームからどうぞ。</p>
+        <div class="rule"></div>
+        <p class="contact-desc">在庫・サイズ・商品のご質問は、LINEまたはオンラインショップのフォームからお気軽にどうぞ。</p>
       </div>
       <div class="contact-btns reveal">
         <a href="https://lin.ee/D8FjnjW" target="_blank" rel="noopener" class="btn-fill">LINE で問い合わせる</a>
@@ -817,10 +555,10 @@
   <footer>
     <div class="footer-inner">
       <div>
-        <p class="footer-logo">HAHA<span>&nbsp;</span>datte</p>
+        <p class="footer-logo">HAHA datte<span class="logo-dot">·</span></p>
         <p class="footer-desc">スタイリストのいるセレクトショップ<br />横浜元町 2店舗</p>
       </div>
-      <nav class="footer-links">
+      <nav class="footer-nav">
         <a href="#concept">Concept</a>
         <a href="#items">Items</a>
         <a href="#stores">Stores</a>
@@ -833,17 +571,15 @@
   </footer>
 
   <script>
-    // Scroll reveal
-    const els = document.querySelectorAll('.reveal');
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
         if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 55);
+          setTimeout(() => e.target.classList.add('visible'), i * 50);
           io.unobserve(e.target);
         }
       });
     }, { threshold: 0.08 });
-    els.forEach(el => io.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   </script>
 
 </body>
