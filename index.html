@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HAHA datte | スタイリストのいるセレクトショップ｜横浜元町</title>
+  <meta name="description" content="横浜元町のセレクトショップ「HAHA datte」。スタイリストTOSHIEがセレクトしたアウター・ワンピース・アクセサリーを揃えています。LINEでサイズ相談・再入荷通知受付中。" />
+
+  <!-- OGP -->
+  <meta property="og:title" content="HAHA datte | スタイリストのいるセレクトショップ｜横浜元町" />
+  <meta property="og:description" content="横浜元町のセレクトショップ。スタイリストTOSHIEがセレクトしたアイテムを2店舗で展開。" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" />
+  <meta property="og:url" content="https://hahadatte.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="HAHA datte" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HAHA datte | スタイリストのいるセレクトショップ" />
+  <meta name="twitter:description" content="横浜元町のセレクトショップ。スタイリストTOSHIEがセレクトしたアイテムを2店舗で展開。" />
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown:  #2B2118;
+      --gold:   #D4A87A;
+      --cream:  #FDFAF6;
+      --muted:  #8C7B6E;
+      --light:  #F0EAE2;
+      --white:  #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--cream); color: var(--brown); font-family: 'Noto Sans JP', sans-serif; font-weight: 300; line-height: 1.8; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 72px;
+      background: rgba(253,250,246,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(43,33,24,0.08);
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: var(--brown);
+      text-decoration: none;
+    }
+    nav { display: flex; gap: 32px; align-items: center; }
+    nav a { font-size: 0.72rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brown); text-decoration: none; opacity: 0.7; transition: opacity 0.2s; }
+    nav a:hover { opacity: 1; }
+    .nav-line { display: block; width: 1px; height: 16px; background: rgba(43,33,24,0.2); }
+    .nav-ig { display: flex; align-items: center; gap: 6px; opacity: 0.7; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 1px; background: var(--brown); }
+
+    /* ===== HERO ===== */
+    .hero {
+      height: 100vh;
+      min-height: 640px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 72px;
+    }
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px 80px 80px;
+    }
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      letter-spacing: 0.04em;
+      color: var(--brown);
+      margin-bottom: 28px;
+    }
+    .hero-title em { font-style: italic; color: var(--gold); }
+    .hero-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 360px;
+      margin-bottom: 40px;
+    }
+    .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      background: var(--brown);
+      color: var(--cream);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 14px 36px;
+      text-decoration: none;
+      transition: background 0.25s;
+    }
+    .btn-primary:hover { background: #3d2f23; }
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--brown);
+      color: var(--brown);
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 13px 28px;
+      text-decoration: none;
+      transition: all 0.25s;
+    }
+    .btn-outline:hover { background: var(--brown); color: var(--cream); }
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(253,250,246,0.15) 0%, transparent 40%);
+    }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 100px 80px; }
+    .section-eyebrow {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 300;
+      line-height: 1.2;
+      color: var(--brown);
+      margin-bottom: 24px;
+    }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .divider {
+      width: 40px; height: 1px;
+      background: var(--gold);
+      margin-bottom: 32px;
+    }
+
+    /* ===== CONCEPT ===== */
+    .concept { background: var(--light); }
+    .concept-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .concept-img { position: relative; }
+    .concept-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+    .concept-img::before {
+      content: '';
+      position: absolute;
+      top: -20px; left: -20px;
+      width: 60%; height: 60%;
+      border: 1px solid var(--gold);
+      z-index: -1;
+    }
+    .concept-text { padding: 20px 0; }
+    .concept-text p { font-size: 0.85rem; color: var(--muted); line-height: 2; margin-bottom: 20px; }
+    .stylist-block {
+      margin-top: 32px;
+      padding: 24px;
+      background: var(--cream);
+      border-left: 2px solid var(--gold);
+    }
+    .stylist-label { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .stylist-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; letter-spacing: 0.1em; color: var(--brown); }
+    .stylist-desc { font-size: 0.75rem; color: var(--muted); margin-top: 8px; line-height: 1.8; }
+
+    /* ===== CATEGORY ===== */
+    .category { background: var(--cream); }
+    .category-header { max-width: 1200px; margin: 0 auto 48px; }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .category-item { position: relative; overflow: hidden; aspect-ratio: 3/4; cursor: pointer; }
+    .category-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+    .category-item:hover img { transform: scale(1.04); }
+    .category-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(43,33,24,0.7) 0%, transparent 50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+    }
+    .category-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .category-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--white); letter-spacing: 0.06em; }
+
+    /* ===== NEW ARRIVAL ===== */
+    .new-arrival { background: var(--light); }
+    .new-arrival-header { max-width: 1200px; margin: 0 auto 48px; display: flex; justify-content: space-between; align-items: flex-end; }
+    .new-arrival-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product-card { }
+    .product-img { position: relative; overflow: hidden; aspect-ratio: 3/4; margin-bottom: 14px; }
+    .product-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .product-card:hover .product-img img { transform: scale(1.03); }
+    .product-tag {
+      position: absolute;
+      top: 12px; left: 12px;
+      background: var(--brown);
+      color: var(--cream);
+      font-size: 0.55rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+    }
+    .product-name { font-size: 0.78rem; letter-spacing: 0.04em; color: var(--brown); margin-bottom: 4px; }
+    .product-price { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--muted); }
+
+    /* ===== INSTAGRAM ===== */
+    .instagram { background: var(--cream); text-align: center; }
+    .instagram-header { margin-bottom: 48px; }
+    .instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3px;
+      max-width: 1000px;
+      margin: 0 auto 40px;
+    }
+    .ig-item { position: relative; overflow: hidden; aspect-ratio: 1; cursor: pointer; }
+    .ig-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+    .ig-item:hover img { transform: scale(1.06); }
+    .ig-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(43,33,24,0);
+      transition: background 0.3s;
+    }
+    .ig-item:hover::after { background: rgba(43,33,24,0.25); }
+    .ig-handle { font-size: 0.72rem; letter-spacing: 0.14em; color: var(--muted); }
+    .ig-handle a { color: var(--brown); text-decoration: none; font-weight: 500; }
+
+    /* ===== LINE ===== */
+    .line-section {
+      background: var(--brown);
+      color: var(--cream);
+      text-align: center;
+      padding: 80px;
+    }
+    .line-section .section-eyebrow { color: var(--gold); }
+    .line-section .section-title { color: var(--cream); margin: 0 auto 16px; }
+    .line-section p { font-size: 0.82rem; color: rgba(253,250,246,0.65); margin-bottom: 36px; }
+    .btn-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #06C755;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      padding: 16px 40px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: opacity 0.2s;
+    }
+    .btn-line:hover { opacity: 0.88; }
+    .btn-line svg { width: 20px; height: 20px; }
+
+    /* ===== STORES ===== */
+    .stores { background: var(--light); }
+    .stores-inner { max-width: 1200px; margin: 0 auto; }
+    .stores-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; }
+    .store-card { background: var(--cream); padding: 40px; }
+    .store-tag { font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .store-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--brown); margin-bottom: 20px; }
+    .store-info { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .store-info li { display: flex; gap: 14px; font-size: 0.78rem; color: var(--muted); }
+    .store-info li span:first-child { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brown); min-width: 56px; font-weight: 500; padding-top: 2px; }
+
+    /* ===== CONTACT ===== */
+    .contact { background: var(--cream); text-align: center; }
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact p { font-size: 0.82rem; color: var(--muted); margin-bottom: 40px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--brown);
+      color: rgba(253,250,246,0.5);
+      padding: 48px 80px 32px;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 40px;
+    }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--cream); letter-spacing: 0.18em; margin-bottom: 12px; }
+    .footer-desc { font-size: 0.7rem; line-height: 1.8; }
+    .footer-links { display: flex; gap: 32px; }
+    .footer-links a { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(253,250,246,0.45); text-decoration: none; }
+    .footer-links a:hover { color: var(--cream); }
+    .footer-bottom { border-top: 1px solid rgba(253,250,246,0.1); padding-top: 20px; font-size: 0.6rem; text-align: center; letter-spacing: 0.1em; }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE — タブレット 769px〜1024px ===== */
+    @media (max-width: 1024px) and (min-width: 769px) {
+      header { padding: 0 32px; }
+      section { padding: 80px 48px; }
+      .hero-left { padding: 60px 48px; }
+      .concept-inner { gap: 48px; }
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+      .new-arrival-grid { grid-template-columns: repeat(2, 1fr); }
+      .instagram-grid { grid-template-columns: repeat(4, 1fr); }
+      .stores-grid { gap: 24px; }
+      .footer-inner { flex-direction: column; gap: 28px; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
+    }
+
+    /* ===== RESPONSIVE — SP 768px以下 ===== */
+    @media (max-width: 768px) {
+      header { padding: 0 20px; }
+      nav { display: none; }
+      .hamburger { display: flex; }
+
+      .hero { grid-template-columns: 1fr; height: auto; min-height: 100svh; }
+      .hero-left { padding: 100px 24px 48px; order: 2; }
+      .hero-right { order: 1; height: 50svh; }
+      .hero-title { font-size: 2.4rem; }
+
+      section { padding: 64px 24px; }
+      .line-section { padding: 64px 24px; }
+
+      .concept-inner { grid-template-columns: 1fr; gap: 40px; }
+      .concept-img::before { display: none; }
+
+      .category-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .new-arrival-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .new-arrival-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+      .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .stores-grid { grid-template-columns: 1fr; gap: 20px; }
+
+      footer { padding: 48px 24px 24px; }
+      .footer-inner { flex-direction: column; gap: 24px; }
+      .footer-links { flex-wrap: wrap; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="#" class="logo">HAHA datte</a>
+    <nav>
+      <a href="#concept">Concept</a>
+      <a href="#items">Items</a>
+      <a href="#stores">Stores</a>
+      <a href="#contact">Contact</a>
+      <span class="nav-line"></span>
+      <a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener" class="nav-ig">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+    </nav>
+    <div class="hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Stylist Select Shop — Yokohama Motomachi</p>
+      <h1 class="hero-title">
+        あなたに似合う<br />
+        <em>一着</em>を、<br />
+        ここで。
+      </h1>
+      <p class="hero-desc">スタイリストTOSHIEがセレクトした、上質でありながら着やすいアイテムたち。横浜元町の2店舗で、あなたのスタイルを一緒に見つけましょう。</p>
+      <div class="hero-actions">
+        <a href="https://hahadatte.com/" target="_blank" rel="noopener" class="btn-primary">Online Shop</a>
+        <a href="#stores" class="btn-outline">Store Info</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="HAHA datte メインビジュアル" />
+    </div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section class="concept" id="concept">
+    <div class="concept-inner">
+      <div class="concept-img reveal">
+        <img src="https://images.unsplash.com/photo-1487222477894-8943e31ef7b2?w=700&q=80" alt="HAHAdatteのコンセプト" />
+      </div>
+      <div class="concept-text reveal">
+        <p class="section-eyebrow">Our Concept</p>
+        <h2 class="section-title">毎日をもっと<br /><em>自分らしく</em>。</h2>
+        <div class="divider"></div>
+        <p>「着ること」は、自分を表現する一番身近な方法。HAHA datteは、横浜元町からスタイリストがセレクトしたアイテムで、あなたの毎日に少しの上質さと遊び心を届けます。</p>
+        <p>2WAYアイテムやコーディネートしやすいセットアップなど、着まわしやすさと個性を両立したラインナップが揃っています。</p>
+        <div class="stylist-block">
+          <p class="stylist-label">Stylist</p>
+          <p class="stylist-name">TOSHIE</p>
+          <p class="stylist-desc">サイズ感・着こなしのご相談はLINEまたは店頭で承ります。お気軽にどうぞ。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY -->
+  <section class="category" id="items">
+    <div class="category-header reveal">
+      <p class="section-eyebrow">Category</p>
+      <h2 class="section-title">アイテムを探す</h2>
+    </div>
+    <div class="category-grid">
+      <div class="category-item reveal">
+        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600&q=80" alt="アウター" />
+        <div class="category-overlay">
+          <p class="category-label">Outerwear</p>
+          <p class="category-name">アウター</p>
+        </div>
+      </div>
+      <div class="category-item reveal">
+        <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=600&q=80" alt="ワンピース" />
+        <div class="category-overlay">
+          <p class="category-label">One-piece</p>
+          <p class="category-name">ワンピース</p>
+        </div>
+      </div>
+      <div class="category-item reveal">
+        <img src="https://images.unsplash.com/photo-1603189343302-e603f7add05a?w=600&q=80" alt="トップス" />
+        <div class="category-overlay">
+          <p class="category-label">Tops</p>
+          <p class="category-name">トップス</p>
+        </div>
+      </div>
+      <div class="category-item reveal">
+        <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?w=600&q=80" alt="ボトムス" />
+        <div class="category-overlay">
+          <p class="category-label">Bottoms</p>
+          <p class="category-name">ボトムス</p>
+        </div>
+      </div>
+      <div class="category-item reveal">
+        <img src="https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=600&q=80" alt="アクセサリー" />
+        <div class="category-overlay">
+          <p class="category-label">Accessories</p>
+          <p class="category-name">アクセサリー</p>
+        </div>
+      </div>
+      <div class="category-item reveal">
+        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80" alt="バッグ" />
+        <div class="category-overlay">
+          <p class="category-label">Bag</p>
+          <p class="category-name">バッグ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW ARRIVAL -->
+  <section class="new-arrival">
+    <div class="new-arrival-header">
+      <div class="reveal">
+        <p class="section-eyebrow">New Arrival</p>
+        <h2 class="section-title">新着アイテム</h2>
+      </div>
+      <a href="https://hahadatte.com/" target="_blank" rel="noopener" class="btn-outline reveal">View All →</a>
+    </div>
+    <div class="new-arrival-grid">
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&q=80" alt="新着アイテム1" />
+          <span class="product-tag">New</span>
+        </div>
+        <p class="product-name">2WAY リネンジャケット</p>
+        <p class="product-price">¥18,700</p>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=80" alt="新着アイテム2" />
+          <span class="product-tag">New</span>
+        </div>
+        <p class="product-name">フローラルマキシワンピース</p>
+        <p class="product-price">¥14,300</p>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&q=80" alt="新着アイテム3" />
+          <span class="product-tag">New</span>
+        </div>
+        <p class="product-name">ワイドリブニット</p>
+        <p class="product-price">¥9,900</p>
+      </div>
+      <div class="product-card reveal">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=400&q=80" alt="新着アイテム4" />
+          <span class="product-tag">New</span>
+        </div>
+        <p class="product-name">レザーハンドルバスケット</p>
+        <p class="product-price">¥12,100</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="instagram">
+    <div class="instagram-header reveal">
+      <p class="section-eyebrow">Instagram</p>
+      <h2 class="section-title">@hahadatte_official</h2>
+      <p style="font-size:0.78rem; color:var(--muted); margin-top:8px;">新作・スタイリングはInstagramでチェック</p>
+    </div>
+    <div class="instagram-grid">
+      <div class="ig-item reveal"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=300&q=70" alt="Instagram" /></div>
+      <div class="ig-item reveal"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=300&q=70" alt="Instagram" /></div>
+      <div class="ig-item reveal"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=300&q=70" alt="Instagram" /></div>
+      <div class="ig-item reveal"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=300&q=70" alt="Instagram" /></div>
+      <div class="ig-item reveal"><img src="https://images.unsplash.com/photo-1551803091-e20673f15770?w=300&q=70" alt="Instagram" /></div>
+    </div>
+    <a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener" class="btn-outline reveal">Instagram をフォローする</a>
+  </section>
+
+  <!-- LINE -->
+  <section class="line-section">
+    <p class="section-eyebrow">LINE Official</p>
+    <h2 class="section-title">サイズ相談・再入荷通知</h2>
+    <p>「このアイテム、私のサイズに合う？」<br />LINEで気軽にTOSHIEに聞いてください。再入荷お知らせも受け取れます。</p>
+    <a href="https://lin.ee/D8FjnjW" target="_blank" rel="noopener" class="btn-line">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.89c.50 0 .902.402.902.9s-.403.9-.902.9h-2.46v1.47h2.46c.5 0 .902.403.902.902s-.403.9-.902.9H15.99a.9.9 0 0 1-.9-.9V9.89c0-.498.402-.9.9-.9h3.375Zm-5.93 0c.5 0 .902.402.902.9v4.17a.9.9 0 0 1-1.803 0V9.89c0-.498.403-.9.9-.9Zm-2.58 0c.498 0 .9.402.9.9v2.79l-2.61-3.33a.9.9 0 0 0-.715-.36.9.9 0 0 0-.9.9v4.17a.9.9 0 0 0 1.8 0v-2.79l2.61 3.33a.9.9 0 0 0 .715.36.9.9 0 0 0 .9-.9V9.89a.9.9 0 0 0-.9-.9h-.8ZM4.635 9.89c.5 0 .9.402.9.9v4.17a.9.9 0 0 1-1.8 0V9.89c0-.498.4-.9.9-.9ZM12 2C6.477 2 2 6.178 2 11.307c0 4.494 3.566 8.257 8.413 9.16.347.063.82-.024.94-.542.105-.452.712-4.226.712-4.226s-.182-.364-.182-1.006c0-.944.548-1.65 1.228-1.65.58 0 .86.436.86 1.088 0 .663-.423 1.654-.64 2.573-.183.767.384 1.39 1.135 1.39 1.362 0 2.41-1.435 2.41-3.51 0-1.835-1.32-3.117-3.203-3.117-2.182 0-3.462 1.636-3.462 3.328 0 .658.253 1.364.57 1.748a.23.23 0 0 1 .052.218c-.058.24-.187.767-.213.874-.034.14-.113.17-.26.103-1-.466-1.627-1.93-1.627-3.106 0-2.527 1.836-4.848 5.296-4.848 2.78 0 4.942 1.982 4.942 4.63 0 2.762-1.74 4.984-4.153 4.984-.81 0-1.574-.422-1.836-.918l-.498 1.862c-.181.695-.668 1.568-.995 2.097A10.03 10.03 0 0 0 12 22c5.523 0 10-4.178 10-9.307C22 6.178 17.523 2 12 2Z"/></svg>
+      LINEで相談する
+    </a>
+  </section>
+
+  <!-- STORES -->
+  <section class="stores" id="stores">
+    <div class="stores-inner">
+      <div class="reveal">
+        <p class="section-eyebrow">Store Information</p>
+        <h2 class="section-title">店舗案内</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="stores-grid">
+        <div class="store-card reveal">
+          <p class="store-tag">Main Store</p>
+          <p class="store-name">HAHA datte</p>
+          <ul class="store-info">
+            <li><span>Address</span><span>横浜市中区元町4丁目159<br />松本ビル 1F</span></li>
+            <li><span>Hours</span><span>10:00 – 19:00</span></li>
+            <li><span>Instagram</span><span><a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener" style="color:var(--brown);">@hahadatte_official</a></span></li>
+          </ul>
+        </div>
+        <div class="store-card reveal">
+          <p class="store-tag">2nd Store</p>
+          <p class="store-name">HAHA datte<span style="font-size:1rem;">+</span></p>
+          <ul class="store-info">
+            <li><span>Address</span><span>横浜市中区元町2-90<br />北村ビル 1F</span></li>
+            <li><span>Hours</span><span>10:00 – 19:00</span></li>
+            <li><span>Instagram</span><span><a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener" style="color:var(--brown);">@hahadatte_official</a></span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="reveal">
+        <p class="section-eyebrow">Contact</p>
+        <h2 class="section-title">お問い合わせ</h2>
+        <div class="divider" style="margin:0 auto 24px;"></div>
+        <p>商品・在庫・サイズについてのご質問は、LINEまたはオンラインショップのお問い合わせフォームよりお気軽にどうぞ。</p>
+      </div>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;" class="reveal">
+        <a href="https://lin.ee/D8FjnjW" target="_blank" rel="noopener" class="btn-primary">LINE で問い合わせる</a>
+        <a href="https://hahadatte.com/pages/contact" target="_blank" rel="noopener" class="btn-outline">フォームで問い合わせる</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <p class="footer-logo">HAHA datte</p>
+        <p class="footer-desc">スタイリストのいるセレクトショップ<br />横浜元町 2店舗</p>
+      </div>
+      <div class="footer-links">
+        <a href="#concept">Concept</a>
+        <a href="#items">Items</a>
+        <a href="#stores">Stores</a>
+        <a href="#contact">Contact</a>
+        <a href="https://hahadatte.com/" target="_blank" rel="noopener">Online Shop</a>
+        <a href="https://www.instagram.com/hahadatte_official/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 HAHA datte. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
